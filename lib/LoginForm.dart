@@ -21,12 +21,14 @@ class LoginForm extends StatelessWidget{
             Text('Login', style: TextStyle(color: Colors.blue, fontSize:30, fontWeight: FontWeight.bold),),
             SizedBox(height:30),
             TextField(
+              autofocus: true,
               controller: _userNameCtr,
               keyboardType: TextInputType.text, decoration: const InputDecoration(
               labelText: 'Username',
               border: OutlineInputBorder(),
             ),
             ),
+
             SizedBox(height:10),
         TextField(
           controller: _passwordCtr,

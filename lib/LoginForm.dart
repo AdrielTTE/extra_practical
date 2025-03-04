@@ -20,6 +20,7 @@ class LoginForm extends StatelessWidget{
             Image.asset('assets/images/tarumt-logo1.png'),
             Text('Login', style: TextStyle(color: Colors.blue, fontSize:30, fontWeight: FontWeight.bold),),
             SizedBox(height:30),
+
             TextField(
               autofocus: true,
               controller: _userNameCtr,
@@ -44,7 +45,9 @@ class LoginForm extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height:100),
+
             ElevatedButton(onPressed: (){
+              FocusScope.of(context).unfocus();
               Student? std = students.where((x)=>x.userName == _userNameCtr.text && x.password == _passwordCtr.text).firstOrNull;
 
               if(std!= null){
@@ -61,6 +64,7 @@ class LoginForm extends StatelessWidget{
 
             }, child: Text('Login'),),
               SizedBox(width:20),
+
             ElevatedButton(onPressed: (){
               _userNameCtr.clear();
               _passwordCtr.clear();
